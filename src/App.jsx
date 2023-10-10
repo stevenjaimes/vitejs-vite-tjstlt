@@ -1,14 +1,21 @@
 import './App.css';
+import AgregarUsuario from './components/AgregarUsuario';
+import EditarUsuario from './components/EditarUsuario';
 import ListaUsuario from './components/ListaUsuario';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 
 function App() {
   return (
   <div className="App">
-    <ListaUsuario/>
-    <h2> Soy Steven Jaimes en el curso de React espero que se encuentren muy bien</h2>
-    <h2>Hello que tal todos</h2>
-    <h3>Todo bien </h3>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<ListaUsuario/>} exact> </Route>
+        <Route path='/agregarusuario' element={<AgregarUsuario/>} exact> </Route>
+        <Route path='/editarusuario' element={<EditarUsuario/>} exact></Route>
+      </Routes>
+    </BrowserRouter>
+
   </div>
     );
 }
